@@ -1,22 +1,64 @@
-'use client'
-import Link from "next/link";
-import { useState } from "react";
-import { useRegisterUserMutation } from "../../../redux/service/User";
+'use client';
+import {useState} from 'react';
+import {useRouter} from 'next/navigation';
+import Link from 'next/link';
 
 export default function RegisterPage() {
-  const [full_name, setFullName] = useState("");
-  const [username, setUsername] = useState("");
-  const [email, setEmail] = useState("");
-  const [password, setPassword] = useState("");
-  const [registerUser] = useRegisterUserMutation();
+    const router = useRouter();
+    const [formData, setFormData] = useState({
+        full_name: '',
+        username: '',
+        email: '',
+        password: ''
+    });
+    const [error, setError] = useState('');
 
-  const handleSubmit = (e) => {
-    e.preventDefault();
-    registerUser({ full_name, username, email, password });
-  };
+    const handleChange = (e) => {
+        setFormData({
+            ...formData,
+            [e.target.name]: e.target.value
+        });
+    };
 
-  return (
-    <main>
+    const handleSubmit = async (e) => {
+        e.preventDefault();
+        setError('');
+        try {
+            const response = await fetch('http://127.0.0.1:8000/api/v1/auth/users/', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json',
+                    'Accept': 'application/json',
+                },
+                body: JSON.stringify(formData)
+            });
+
+            const data = await response.json();
+
+            if (response.ok) {
+                router.push('/login');
+            } else {
+                if (typeof data === 'object') {
+                    const errorMessages = Object.entries(data)
+                        .map(
+                            ([key, value]) => `${key}: ${value}`
+                        )
+                        .join('\n');
+                    setError(errorMessages);
+                } else if (data.message) {
+                    setError(data.message);
+                } else {
+                    setError('Registration failed. Please check your information and try again.');
+                }
+            }
+        } catch (err) {
+            console.error('Registration error:', err);
+            setError('Something went wrong. Please check your connection and try again.');
+        }
+    };
+
+    return (
+      <main>
       <div className="flex min-h-full flex-1 flex-col justify-center px-6 py-8 lg:px-8">
         <div className="sm:mx-auto sm:w-full sm:max-w-sm">
           <h2 className="mt-6 text-center text-2xl font-bold tracking-tight text-gray-900">
@@ -36,8 +78,8 @@ export default function RegisterPage() {
                   name="full_name"
                   type="text"
                   required
-                  value={full_name}
-                  onChange={(e) => setFullName(e.target.value)}
+                  value={formData.full_name}
+                  onChange={handleChange}
                   className="block w-full rounded-md bg-white px-3 py-1.5 text-base
                    text-gray-900 outline outline-1 -outline-offset-1
                     outline-gray-300 placeholder:text-gray-400 focus:outline focus:outline-2 focus:-outline-offset-2 focus:outline-indigo-600 sm:text-sm/6"
@@ -55,8 +97,8 @@ export default function RegisterPage() {
                   name="username"
                   type="text"
                   required
-                  value={username}
-                  onChange={(e) => setUsername(e.target.value)}
+                  value={formData.username}
+                  onChange={handleChange}
                   className="block w-full rounded-md bg-white px-3 py-1.5 text-base text-gray-900 outline outline-1 -outline-offset-1 outline-gray-300 placeholder:text-gray-400 focus:outline focus:outline-2 focus:-outline-offset-2 focus:outline-indigo-600 sm:text-sm/6"
                 />
               </div>
@@ -73,8 +115,8 @@ export default function RegisterPage() {
                   type="email"
                   required
                   autoComplete="email"
-                  value={email}
-                  onChange={(e) => setEmail(e.target.value)}
+                  value={formData.email}
+                  onChange={handleChange}
                   className="block w-full rounded-md bg-white px-3 py-1.5 text-base text-gray-900 outline outline-1 -outline-offset-1 outline-gray-300 placeholder:text-gray-400 focus:outline focus:outline-2 focus:-outline-offset-2 focus:outline-indigo-600 sm:text-sm/6"
                 />
               </div>
@@ -91,8 +133,8 @@ export default function RegisterPage() {
                   type="password"
                   required
                   autoComplete="new-password"
-                  value={password}
-                  onChange={(e) => setPassword(e.target.value)}
+                  value={formData.password}
+                  onChange={handleChange}
                   className="block w-full rounded-md bg-white px-3 py-1.5 text-base text-gray-900 outline outline-1 -outline-offset-1 outline-gray-300 placeholder:text-gray-400 focus:outline focus:outline-2 focus:-outline-offset-2 focus:outline-indigo-600 sm:text-sm/6"
                 />
               </div>
@@ -117,5 +159,5 @@ export default function RegisterPage() {
         </div>
       </div>
     </main>
-  );
+    );
 }
