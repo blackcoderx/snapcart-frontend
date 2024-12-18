@@ -65,7 +65,11 @@ export default function RegisterPage() {
             Create your account
           </h2>
         </div>
-
+        {error && (
+                    <div className="bg-red-100 border border-red-400 text-red-700 px-4 py-3 rounded">
+                        {error}
+                    </div>
+                )}
         <div className="mt-6 sm:mx-auto sm:w-full sm:max-w-sm">
           <form className="space-y-4" onSubmit={handleSubmit}>
             <div>
