@@ -2,19 +2,22 @@
 import Link from "next/link";
 import { useState } from "react";
 import { useLoginUserMutation } from "../../../redux/service/User";
+import { useRouter } from 'next/navigation';
+import { useDispatch } from "react-redux";
+import { login } from "@/redux/features/authSlice";
 
 export default function LoginPage() {
-
+  const dispatch = useDispatch();
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const [loginUser, ] = useLoginUserMutation();
-  
+  const router = useRouter();  
 
   const handleSubmit = (e) => {
     e.preventDefault();
     loginUser({email, password});
-
-    
+    dispatch(login());
+    router.push('/');
 
   };
 

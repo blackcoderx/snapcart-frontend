@@ -3,11 +3,12 @@ import { createSlice } from "@reduxjs/toolkit";
 const authSlice = createSlice({
     name: 'auth',
     initialState: {
-        isAuthenticated: false,
+        isAuthenticated: true,
+        // change the isAuthenticated property to false when pushing the code  
         user_name: undefined,
         userID: 0,
         full_name: undefined,
-        is_seller: false,
+        is_seller: true,
         isLoading: true,
         profile_pic: undefined,
     },
