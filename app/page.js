@@ -1,5 +1,5 @@
 'use client'
-// import { SidebarDisplay } from "@/components/custom/sidebar";
+import { SidebarDisplay } from "@/components/custom/sidebar";
 import Feed from "@/components/custom/feed";
 // import { useGetProductsQuery } from "@/redux/service/Products";
 import Notifications from "@/components/custom/notifications";
