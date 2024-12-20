@@ -1,6 +1,5 @@
 import StoreProvider from "../redux/StoreProvider";
 import "./globals.css";
-import { SidebarDisplay } from "@/components/custom/sidebar";
 import { Toaster } from "@/components/ui/toaster"
 
 
