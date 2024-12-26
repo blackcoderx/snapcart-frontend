@@ -1,8 +1,5 @@
 'use client'
 import { SidebarDisplay } from "@/components/custom/sidebar";
-import Feed from "@/components/custom/feed";
-import Notifications from "@/components/custom/notifications";
-import { Button } from "@/components/ui/button";
 import Head from "next/head";
 import { useRouter } from "next/navigation";
 
