@@ -50,8 +50,7 @@ export default function Navbar() {
                 ))}
             </ul>
 
-            <NotLogIn/>
-            <LogIn username={user_name} profile_pic={profile_pic}/>
+            {/*{isAuthenticated? <LogIn username={user_name} profile_pic={profile_pic} /> : <NotLogIn />}*/}
         </nav>
 
     )
