@@ -33,7 +33,7 @@ export function LoginForm({className,
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    loginUser({email, password});
+    loginUser({email: email, password: password});
     dispatch(login());
     router.push('/');
   };

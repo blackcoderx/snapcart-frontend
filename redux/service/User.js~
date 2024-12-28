@@ -59,9 +59,6 @@ export const usersApi = apiSlice.injectEndpoints({
                     url: "auth/jwt/create/",
                     method: "POST",
                     body: credentials,
-                    headers: {
-                        'Content-Type': 'application/json'
-                    }
                 }),
             }),
             logoutUser:
