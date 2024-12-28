@@ -19,7 +19,7 @@ export const usersApi = apiSlice.injectEndpoints({
                 }),
             fetchUser:
                 builder.query({
-                    query: (id) => `auth/users/me/`,
+                    query: () => `auth/users/me/`,
                 }),
             activation:
                 builder.mutation({

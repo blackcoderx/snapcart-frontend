@@ -80,40 +80,5 @@ body {
   }
 }
 
-.layout{
-  margin-left: 15rem;
-  min-height: 100dvh;
-}
 
 
-.home{
-  display: flex;
-}
-
-.cart-page{
-  padding-inline: 1rem;
-  padding-top: 0.5rem;
-}
-
-.notifications{
-  background-color: aliceblue;
-  height: 100dvh;
-  flex-basis: 30%;
-  padding: 1rem;
-}
-
-.feed{
-  flex-basis: 70%;
-  padding-top: 1.7rem;
-}
-
-.profile-page{
-  width: 100%;
-  display: flex;
-}
-
-.profile{
-  width: 80%;
-  margin-inline: auto;
-  padding-top: 2rem;
-}

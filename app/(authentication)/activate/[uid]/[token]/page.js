@@ -1,7 +1,7 @@
 'use client'
 import React, {useEffect} from "react"
 import { useParams, useRouter } from "next/navigation"
-import { useActivationMutation } from "../../../../../redux/service/User"
+import { useActivationMutation } from "@/redux/service/User"
 
 export default function ActivationPage() {
   const params = useParams()

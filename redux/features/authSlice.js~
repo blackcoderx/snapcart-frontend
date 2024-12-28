@@ -6,7 +6,7 @@ const authSlice = createSlice({
         isAuthenticated: false,
         // change the isAuthenticated property to false when pushing the code  
         userID: 0,
-        user_name: undefined,
+        user_name: null,
         full_name: undefined,
         is_seller: false,
         isLoading: true,

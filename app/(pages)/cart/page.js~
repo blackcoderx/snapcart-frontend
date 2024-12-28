@@ -1,6 +1,7 @@
 'use client'
 
 export default function CartPage() {
+  const [tab, setTab] = useState("my-cart");
 
   return (
         <>
