@@ -8,6 +8,7 @@ const mutex = new Mutex();
 // Set up the base query with the API URL and cookie handling
 const baseQuery = fetchBaseQuery({
     baseUrl: `https://snapcart-3o5b.onrender.com/api/v1/`,
+    // baseUrl: `http://localhost:8000/api/v1/`,
     credentials: 'include', // This ensures cookies are sent with requests
 });
 

@@ -13,6 +13,7 @@ import {useDispatch} from "react-redux";
 import {useState} from "react";
 import {useLoginUserMutation, useFetchUserQuery} from "@/redux/service/User";
 import {useRouter} from "next/navigation";
+import {login, setDetails} from "@/redux/features/authSlice";
 
 
 

@@ -3,7 +3,6 @@
 
 import {useSelector} from "react-redux";
 import Link from 'next/link'
-import Image from 'next/image'
 const links = ['Home', 'Explore', 'Cart', 'Chat']
 
 // const NotLogIn = () => {
@@ -50,7 +49,6 @@ export default function Navbar() {
                 ))}
             </ul>
 
-            {/*{isAuthenticated? <LogIn username={user_name} profile_pic={profile_pic} /> : <NotLogIn />}*/}
         </nav>
 
     )
