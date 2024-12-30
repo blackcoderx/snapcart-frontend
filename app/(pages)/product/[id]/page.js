@@ -57,30 +57,3 @@ export default function ProductPage() {
       </>
   );
 }
-
-const obj = {
-    "id": 4,
-    "name": "Air Force 1",
-    "price": "2327.00",
-    "images": [
-        {
-            "id": 3,
-            "image": "image/upload/v1734097622/nouptgxhsbotxfasyxvz.jpg"
-        }
-    ],
-    "number_of_likes": 1,
-    "description": "Air force 1 Low '07 Black White 2023.",
-    "category": {
-        "id": 3,
-        "name": "Shoes"
-    },
-    "seller": {
-        "id": "981c3701-b160-4f17-9ec6-26e6d632cb57",
-        "username": "daavi",
-        "profile_picture": "image/upload/v1734126247/dbliu1p4nrwkejryo2yy.jpg",
-        "is_seller": true,
-        "locations": []
-    },
-    "comments": [],
-    "quantity": 9
-}
