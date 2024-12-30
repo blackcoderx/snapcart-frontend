@@ -2,6 +2,10 @@
 import Header from '@/components/custom/header';
 import Head from "next/head";
 import Hero from '@/components/custom/hero';
+// import {useDispatch} from "react-redux";
+// import {useFetchUserQuery} from "@/redux/service/User";
+// import {setDetails,login} from "@/redux/features/authSlice";
+// import {useEffect} from "react";
 import Feed from "@/components/custom/feed";
 
 export default function HomePage() {

@@ -103,6 +103,7 @@ header{
 
 .product-details{
     flex: 2 60%;
+    background-color: whitesmoke;
     display: grid;
     grid-template-rows: 9% auto 9%;
     gap: 1rem;

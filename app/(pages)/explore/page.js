@@ -1,11 +1,18 @@
+'use client'
 
+import Header from "@/components/custom/header";
+import Hero from "@/components/custom/hero";
 export default function ExplorePage() {
 
 
 
   return (
-    <div className="explore-page">
-    hi
-    </div>
+      <>
+        <Header />
+        <main className="explore-page">
+          <Hero />
+        </main>
+      </>
+
   );
 }

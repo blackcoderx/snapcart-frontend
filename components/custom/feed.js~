@@ -13,7 +13,7 @@ export default function Feed() {
         <div className='feed'>
             {products ? (
                 products.map((product) => (
-                    <Link key={product.id} href={`/product/${product.id}`}>
+                    <Link key={product.id} href={`/${product.id}`}>
                     <ProductCard  product={product} />
                      </Link>
                 ))

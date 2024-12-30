@@ -13,7 +13,7 @@ export default function ProductCard({product}) {
                 <div>
                     <h2 className='font-medium text-center uppercase'>{product.name}</h2>
                         <p>{product.number_of_likes} likes</p>
-                        <p className='font-semibold'>${product.price}</p>
+                        <p className='font-bold'>${product.price}</p>
                 </div>
             </div>
         </>
